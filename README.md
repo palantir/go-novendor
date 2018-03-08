@@ -30,10 +30,10 @@ The project package for an import is determined using regular expressions. If an
 then only the matching portion is used as the project package. By default, the following regular expressions are used:
 
 ```
-"github.com/[^/]+/[^/]+"
-"golang.org/[^/]+/[^/]+"
-"gopkg.in/[^/]+"
-"github\.[^/]+/[^/]+/[^/]+"
+`github\.com/[^/]+/[^/]+`
+`golang\.org/[^/]+/[^/]+`
+`gopkg\.in/[^/]+`
+`github\.[^/]+/[^/]+/[^/]+`
 ```
 
 Custom regular expression can be specified using a flag.

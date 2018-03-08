@@ -45,9 +45,9 @@ var (
 	ignorePkgsFlagVal              []string
 
 	defaultPkgRegexps = []string{
-		"github.com/[^/]+/[^/]+",
-		"golang.org/[^/]+/[^/]+",
-		"gopkg.in/[^/]+",
+		`github\.com/[^/]+/[^/]+`,
+		`golang\.org/[^/]+/[^/]+`,
+		`gopkg\.in/[^/]+`,
 		`github\.[^/]+/[^/]+/[^/]+`,
 	}
 )
