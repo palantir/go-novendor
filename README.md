@@ -9,7 +9,7 @@ this tool from vendoring and still have the project build correctly. Standard Go
 package is vendored (basically, any package that is within a "vendor" directory is vendored).
 
 Project Packages
-================
+----------------
 `novendor` has a notion of "project packages". A "project package" is considered to be a top-level package for a single
 project that may contain many subpackages. Although this is not an official Go concept, it captures much of how code is
 organized in practice.
