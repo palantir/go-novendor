@@ -1,6 +1,5 @@
 go-novendor
 ===========
-
 go-novendor verifies that there are no unused vendored imports in a Go project.
 
 A vendored package is considered unused if the package is not imported by any of the non-vendored code in the project
