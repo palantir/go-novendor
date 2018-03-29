@@ -78,6 +78,29 @@ func TestNovendor(t *testing.T) {
 			},
 		},
 		{
+			name: "vendored testdata packages are ignored",
+			files: []gofiles.GoFileSpec{
+				{
+					RelPath: "foo.go",
+					Src:     `package main; import _ "{{index . "vendor/github.com/org/product/bar/bar.go"}}";`,
+				},
+				{
+					RelPath: "vendor/github.com/org/product/bar/bar.go",
+					Src:     `package bar`,
+				},
+				{
+					RelPath: "vendor/github.com/org/product/bar/testdata/data.go",
+					Src: `// +build ignore
+package main`,
+				},
+			},
+			pkgs: func(projectDir string) []string {
+				return []string{
+					projectDir + "/.",
+				}
+			},
+		},
+		{
 			name: "multi-level vendored imports: import a non-external package that uses vendoring to import a package that is visible to the non-external package but not to the base package",
 			files: []gofiles.GoFileSpec{
 				{

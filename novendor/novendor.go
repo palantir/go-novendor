@@ -234,7 +234,8 @@ func allVendoredPackages(vendorDir string) (map[string]struct{}, error) {
 			}
 		}
 
-		if !dirContainsPkg {
+		// latter can happen in directories like "testdata"
+		if !dirContainsPkg || buildPkgs[0].ImportPath == "." {
 			return nil
 		}
 
