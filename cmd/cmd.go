@@ -16,13 +16,14 @@ package cmd
 
 import (
 	"github.com/palantir/godel/framework/pluginapi"
+	"github.com/palantir/pkg/cobracli"
 	"github.com/spf13/cobra"
 
 	"github.com/palantir/go-novendor/novendor"
 )
 
 var (
-	RootCmd = &cobra.Command{
+	rootCmd = &cobra.Command{
 		Use:   "novendor [flags] [packages]",
 		Short: "verifies that all vendored packages are referenced in the project",
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -52,9 +53,13 @@ var (
 	}
 )
 
+func Execute() int {
+	return cobracli.ExecuteWithDefaultParams(rootCmd)
+}
+
 func init() {
-	pluginapi.AddProjectDirPFlagPtr(RootCmd.Flags(), &projectDirFlagVal)
-	RootCmd.Flags().StringArrayVar(&pkgRegexpsFlagVal, "pkg-regexp", defaultPkgRegexps, "regular expressions used to group packages")
-	RootCmd.Flags().BoolVar(&includeVendorImportPathFlagVal, "full-import-path", false, "print the full import path (including the vendor directory) for unused packages")
-	RootCmd.Flags().StringSliceVar(&ignorePkgsFlagVal, "ignore-pkg", nil, "packages that should be ignored (suppressed from output)")
+	pluginapi.AddProjectDirPFlagPtr(rootCmd.Flags(), &projectDirFlagVal)
+	rootCmd.Flags().StringArrayVar(&pkgRegexpsFlagVal, "pkg-regexp", defaultPkgRegexps, "regular expressions used to group packages")
+	rootCmd.Flags().BoolVar(&includeVendorImportPathFlagVal, "full-import-path", false, "print the full import path (including the vendor directory) for unused packages")
+	rootCmd.Flags().StringSliceVar(&ignorePkgsFlagVal, "ignore-pkg", nil, "packages that should be ignored (suppressed from output)")
 }
