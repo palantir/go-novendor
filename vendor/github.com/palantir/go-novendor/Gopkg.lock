@@ -25,18 +25,9 @@
   packages = [
     "dirs",
     "errorstringer",
-    "gofiles",
+    "gofiles"
   ]
   revision = "b64318170fdef93b4462420e0badef8050dbb7ec"
-
-[[projects]]
-  name = "github.com/palantir/go-novendor"
-  packages = [
-    "cmd",
-    "novendor",
-  ]
-  revision = "269e86aa2991b5b70db81d9495d8a5e0199c4823"
-  version = "v1.2.0"
 
 [[projects]]
   branch = "master"
@@ -49,7 +40,7 @@
     "framework/pluginapi",
     "framework/verifyorder",
     "godelgetter",
-    "pkg/osarch",
+    "pkg/osarch"
   ]
   revision = "23cdea0b00851e6cbdc14f50676c43ba26b47894"
 
@@ -59,7 +50,7 @@
   packages = [
     "cobracli",
     "matcher",
-    "specdir",
+    "specdir"
   ]
   revision = "23395ebeee5df1083443a6261e5f674a76af91b6"
 
@@ -91,7 +82,7 @@
   name = "github.com/stretchr/testify"
   packages = [
     "assert",
-    "require",
+    "require"
   ]
   revision = "12b6f73e6084dad08a7c6e575284b177ecafbc71"
   version = "v1.2.1"
@@ -117,6 +108,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "84c51ee69de0a0aa21962d53f76ffda322da5481dbddaca75de3044480f7030d"
+  inputs-digest = "1a04d28cf92abdb7f90b2fec6dd96132b7998b28e7d39fd6846c3dbac6004fbb"
   solver-name = "gps-cdcl"
   solver-version = 1
