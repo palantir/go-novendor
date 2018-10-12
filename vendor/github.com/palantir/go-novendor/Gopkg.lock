@@ -30,15 +30,6 @@
   revision = "b64318170fdef93b4462420e0badef8050dbb7ec"
 
 [[projects]]
-  name = "github.com/palantir/go-novendor"
-  packages = [
-    "cmd",
-    "novendor",
-  ]
-  revision = "b6e00e060ed72b25a02eda96ea2044bd3eb476dc"
-  version = "v1.3.0"
-
-[[projects]]
   branch = "master"
   name = "github.com/palantir/godel"
   packages = [
@@ -117,6 +108,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "c178430606057d836ec3823cd64ebea927618c9615be84793be67f6c2e8ce66f"
+  inputs-digest = "d3f6f5c7f5ae3fa44548b73ce53e2c517a66fdfe8e889948e720803598142e9c"
   solver-name = "gps-cdcl"
   solver-version = 1
